@@ -1,0 +1,16 @@
+{
+"companyName": "Soul Ark Comunity",
+"productName": "Soul Ark Model Viewer",
+"productVersion": "0.1",
+"dataUrl": "soulark.data.unityweb",
+"wasmCodeUrl": "soulark.wasm.code.unityweb",
+"wasmFrameworkUrl": "soulark.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.9f1"
+}

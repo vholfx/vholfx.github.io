@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Soul Ark Model Viewer</title>
-    <link rel="shortcut icon" href="/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="/TemplateData/style.css">
-    <script src="/TemplateData/UnityProgress.js"></script>
+    <title>Soul Ark Model Viewer</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SoulArkModelViewer.json", {onProgress: UnityProgress});
+    <script type="text/javascript">
+        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/soulark.json", { onProgress: UnityProgress });
 
-      function loadCharacter(event){
-        var character = document.getElementById("characters").value;
-        console.log(character);
-        unityInstance.SendMessage("Main", "LoadCharacter", character);
-      };
+        function loadCharacter(event) {
+            var character = document.getElementById("characters").value;
+            console.log(character);
+            unityInstance.SendMessage("Main", "LoadCharacter", character);
+            window.location.href = "#unityContainer";
+        };
     </script>
-  </head>
+</head>
   <body>
-
-    <div class="webgl-content">
-      <div style="text-align: center;">
-        <select id="characters" onchange="loadCharacter()">
-          <option value="">Select Character</option>
-          <option>Amara</option>
-          <option>Lei</option>
-        </select>
+      <div class="webgl-content">
+          <!--<div style="text-align: center;">
+              <select id="characters" onchange="loadCharacter()">
+                  <option value="">Select Character</option>
+                  <option value="abaddon">Abaddon</option>
+                  <option value="abaddon_char">&nbsp;&nbsp;Abaddon [Char]</option>
+                  <option value="amara">Amara</option>
+                  <option value="amara_xmas">&nbsp;&nbsp;Christmass Present Amara</option>
+                  <option value="ashe">Ashe</option>
+                  <option value="ashe_legend">&nbsp;&nbsp;Ashe the Terrible</option>
+                  <option value="alexandria">Alexandria</option>
+                  <option value="alexandria_vacation">&nbsp;&nbsp;Beach Alexandria</option>
+                  <option value="beck">Beck</option>
+                  <option value="celeste">Celeste</option>
+                  <option value="chel">Chel</option>
+                  <option value="daphne">Daphne</option>
+                  <option value="djon">Djon</option>
+                  <option value="faye">Faye</option>
+                  <option value="faye_vacation">&nbsp;&nbsp;Beach Faye</option>
+                  <option value="iris">Iris</option>
+                  <option value="izen">Izen</option>
+                  <option value="mamba">Mamba</option>
+                  <option value="mamba_costume02">&nbsp;&nbsp;Night Goddess Mamba</option>
+                  <option value="lei">Lei</option>
+                  <option value="lei_char">&nbsp;&nbsp;Lei [Char]</option>
+                  <option value="lyssa">Lyssa</option>
+                  <option value="pilgrim">Pilgrim</option>
+                  <option value="freya">Princess Freya</option>
+                  <option value="raina">Raina</option>
+                  <option value="shiin">Shiin</option>
+                  <option value="scarlett">Scarlett</option>
+                  <option value="scarlett_special">&nbsp;&nbsp;Scarlett Special</option>
+                  <option value="scarlett_legend">&nbsp;&nbsp;Fox Goddess Scarlett</option>
+                  <option value="sonya">Sonya</option>
+                  <option value="wen">Wen</option>
+                  <option value="wen_vacation">&nbsp;&nbsp;Beach Wen</option>
+                  <option value="wen_vacation_char">&nbsp;&nbsp;Beach Wen [Char]</option>
+                  <option disabled>──────────</option>
+                  <option value="eve">Eve</option>
+                  <option value="eve_char">&nbsp;&nbsp;Eve [Char]</option>
+                  <option value="eve_baseball">&nbsp;&nbsp;4th Batter Eve</option>
+                  <option value="eve_baseball_char">&nbsp;&nbsp;4th Batter Eve [Char]</option>
+                  <option value="jabberwock">Jabberwock</option>
+                  <option value="nikita">Nikita</option>
+                  <option value="niya">Niya</option>
+                  <option value="seo">Seo</option>
+                  <option value="teresa_legend">Teresa Limit Break</option>
+              </select>
+          </div>-->
+          <br>
+          <div id="unityContainer" style="width: 900px; height: 600px"></div>
+          <div class="footer">
+              <div class="webgl-logo"></div>
+               <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+              <div class="title">Soul Ark Model Viewer</div>
+          </div>
       </div>
-      <br>
-      <div id="unityContainer" style="width: 900px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <!-- <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div> -->
-        <div class="title">Soul Ark Model Viewer</div>
-      </div>
-    </div>
   </body>
 </html>
